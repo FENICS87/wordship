@@ -23,10 +23,10 @@ h2{
 
 }
 .warship{
-   /* background-color: green;*/
+    /*background-color: green;*/
 }
 .warshipClosed{
-   /* background-color: red;*/
+  /*  background-color: red;*/
 }
 .shot{
     background-color: blue;
@@ -35,5 +35,5 @@ h2{
     background-color: red;
 }
 .smite{
-    background-color: orangered;
+    background-color: rgb(209, 24, 163);
 }

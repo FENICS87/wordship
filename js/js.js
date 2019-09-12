@@ -32,7 +32,7 @@ function start(matrix){
    location1(warship1);
 }
 
-function location1(warship){
+function location1(warship){   //определение стартовых координат
     let i = 0;
     for(let i =0; i<warship[1]; i++){
         while( i < warship[1]){
@@ -46,7 +46,7 @@ function location1(warship){
             Math.floor(Math.random() * 10):
             Math.floor(Math.random() * (10-warship[0]));
               
-            if(matrix[coordinateY][coordinateX].classList.contains("warship") || matrix[coordinateY][coordinateX].classList.contains("warshipClosed")){
+            if(matrix[coordinateY][coordinateX].classList.contains("warship") || matrix[coordinateY][coordinateX].classList.contains("warshipClosed")){//проверка на накладку кораблей
              
                 continue;
             }
@@ -68,7 +68,7 @@ function location1(warship){
     }
 }
 
-function installation( coordinateX,  coordinateY, warshipDirection, warship){
+function installation( coordinateX,  coordinateY, warshipDirection, warship){//установка кораблей и расчет полей на которых устанавливать нельзя
     if(warshipDirection === "row") {
         
         for(let i = coordinateX; i <  coordinateX + warship[0]; i++){

@@ -41,7 +41,7 @@ function location1(warship){
             let  warshipDirection = (Math.random() * 10 > 5) ? "row":"column";
             let coordinateX = (warshipDirection ==="row") ? 
             Math.floor(Math.random() * (matrix[0].length - warship[0])):
-            Math.floor(Math.random() * 10);
+            Math.floor(Math.random() * matrix[0].length);
 
             let coordinateY = (warshipDirection === "row") ? 
             Math.floor(Math.random() * matrix.length):
@@ -92,7 +92,7 @@ function installation( coordinateX,  coordinateY, warshipDirection, warship){
                 continue;
             }
             for(let x = coordinateX - 1; x < coordinateX + 2; x++){
-                if((x<0)||(x === matrix.length)){
+                if((x<0)||(x === matrix[0].length)){
                     continue;
                 }
                 if(matrix[y][x].classList.contains("warship")){

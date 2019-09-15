@@ -1,4 +1,4 @@
-""use strict";
+"use strict";
 let table = document.querySelector("table"),
     matrix = Array.from(table.querySelectorAll("tr")).slice(1);
 for(let i = 0; i < matrix.length; i++){
@@ -59,16 +59,17 @@ function location1(warship){
 }
 
 function installation( coordinateX,  coordinateY, warshipDirection, warship){
+    let warshipLocace1=[];
     if(warshipDirection === "row") {//кордината x
-        for(let x = coordinateX - 1; x <=  coordinateX + warship[0]+1; x++){//проверка чтобы линия не вылезла за пределы поля
+        for(let x = coordinateX - 1; x <=  coordinateX + warship[0]+1; x++){
            if(!((x === coordinateX - 1)||(x ===  coordinateX + warship[0]+1))){ 
-               matrix[coordinateY][x].classList.add("warship");//чертит линию по оси Х
+               matrix[coordinateY][x].classList.add("warship");
                 warshipLocace1.push( matrix[coordinateY][x]);
             }
             if((x < 0)||(x === matrix[0].length)){
                 continue;
             }
-            for(let y = coordinateY - 1; y < coordinateY + 2; y++){//чертит вспомогательные линии по оси Х
+            for(let y = coordinateY - 1; y < coordinateY + 2; y++){
                 if((y<0)||(y === matrix.length)){
                     continue;
                 }
@@ -79,17 +80,17 @@ function installation( coordinateX,  coordinateY, warshipDirection, warship){
                 }
             }
         }
-    }else{///координата Y
-        for(let y = coordinateY - 1; y <=  coordinateY + warship[0]+1; y++){//проверка чтобы линия не вылезла за пределы поля
+    }else{
+        for(let y = coordinateY - 1; y <=  coordinateY + warship[0]+1; y++){
            if(!((y === coordinateY - 1)||(y ===  coordinateY + warship[0]+1))){
-               matrix[y][coordinateX].classList.add("warship");//чертит линию по оси У
+               matrix[y][coordinateX].classList.add("warship");
                warshipLocace1.push( matrix[y][coordinateX]);
             }
             
             if((y < 0)||(y === matrix.length)){
                 continue;
             }
-            for(let x = coordinateX - 1; x < coordinateX + 2; x++){//чертит вспомогательные линии по осиУ
+            for(let x = coordinateX - 1; x < coordinateX + 2; x++){
                 if((x<0)||(x === matrix[0].length)){
                     continue;
                 }
@@ -101,6 +102,7 @@ function installation( coordinateX,  coordinateY, warshipDirection, warship){
             }
         }
     }
+    warshipLocace.push(warshipLocace1);
 }
 function zzz(){
     for(let i=0; i<warshipLocace.length; i++){
